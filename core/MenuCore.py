@@ -2,6 +2,10 @@ import sys
 from PyQt5 import QtCore, QtWidgets
 from GUI.Menu import Ui_menu
 from PyQt5.QtWidgets import QMainWindow
+from PyQt5.QtCore import QCoreApplication
+
+from GUI.design import Ui_design
+
 
 class MainWindow(QMainWindow,Ui_menu):
 
@@ -10,10 +14,29 @@ class MainWindow(QMainWindow,Ui_menu):
         self.setupUi(self)
 
         self.designModel.clicked.connect(self.openDesign)
+        self.designModel.clicked.connect(self.close)
+
+        self.classicalModel.clicked.connect(self.openClassic)
+        self.designModel.clicked.connect(self.close)
+
+        self.importModel.clicked.connect(self.openClassic)
+        self.designModel.clicked.connect(self.close)
+
 
     def openDesign(self):
-        import core.DesignCore as dc
-        self.design = dc.designWindow()
+        import core.DesignCore
+        self.design = core.DesignCore.designWindow()
         self.design.show()
+    def openClassic(self):
+        import core.ClassicCore
+        self.design = core.ClassicCore.classicWindow()
+        self.design.show()
+
+    def openUD(self):
+        import core.UDCore
+        self.design = core.UDCore.UDWindow()
+        self.design.show()
+
+
 
 

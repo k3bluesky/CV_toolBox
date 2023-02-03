@@ -9,9 +9,10 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QMainWindow
 
 
-class Ui_design(object):
+class Ui_design(QMainWindow):
     def setupUi(self, design):
         design.setObjectName("design")
         design.resize(863, 630)
@@ -20,9 +21,9 @@ class Ui_design(object):
         self.back = QtWidgets.QPushButton(self.centralwidget)
         self.back.setGeometry(QtCore.QRect(30, 490, 131, 71))
         self.back.setObjectName("back")
-        self.next = QtWidgets.QPushButton(self.centralwidget)
-        self.next.setGeometry(QtCore.QRect(720, 490, 121, 81))
-        self.next.setObjectName("next")
+        self.nextToTrain = QtWidgets.QPushButton(self.centralwidget)
+        self.nextToTrain.setGeometry(QtCore.QRect(720, 490, 121, 81))
+        self.nextToTrain.setObjectName("nextToTrain")
         self.AddConv = QtWidgets.QPushButton(self.centralwidget)
         self.AddConv.setGeometry(QtCore.QRect(40, 130, 171, 71))
         self.AddConv.setObjectName("AddConv")
@@ -46,7 +47,7 @@ class Ui_design(object):
         self.next_4.setObjectName("next_4")
         design.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(design)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 863, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 863, 23))
         self.menubar.setObjectName("menubar")
         self.menu = QtWidgets.QMenu(self.menubar)
         self.menu.setObjectName("menu")
@@ -63,7 +64,7 @@ class Ui_design(object):
         _translate = QtCore.QCoreApplication.translate
         design.setWindowTitle(_translate("design", "design"))
         self.back.setText(_translate("design", "back"))
-        self.next.setText(_translate("design", "next"))
+        self.nextToTrain.setText(_translate("design", "next"))
         self.AddConv.setText(_translate("design", "Add Convolution"))
         self.AddPooling.setText(_translate("design", "Add Pooling"))
         self.AddFully.setText(_translate("design", "Add Fully Connected"))
