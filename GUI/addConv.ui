@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Add Convolution</string>
   </property>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="filterLabel">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -26,12 +26,12 @@
     <string>filters</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_2">
+  <widget class="QLabel" name="kernelSizeLabel">
    <property name="geometry">
     <rect>
      <x>190</x>
      <y>50</y>
-     <width>91</width>
+     <width>101</width>
      <height>16</height>
     </rect>
    </property>
@@ -39,12 +39,12 @@
     <string>kernel_size</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_3">
+  <widget class="QLabel" name="stridesLabel">
    <property name="geometry">
     <rect>
-     <x>380</x>
+     <x>390</x>
      <y>50</y>
-     <width>61</width>
+     <width>71</width>
      <height>16</height>
     </rect>
    </property>
@@ -52,20 +52,20 @@
     <string>strides</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_4">
+  <widget class="QLabel" name="activationLabel">
    <property name="geometry">
     <rect>
      <x>210</x>
      <y>110</y>
-     <width>81</width>
+     <width>91</width>
      <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>activaton</string>
+    <string>activation</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_5">
+  <widget class="QLabel" name="paddingLabel">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -78,7 +78,7 @@
     <string>padding </string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="filterEdit">
    <property name="geometry">
     <rect>
      <x>90</x>
@@ -88,27 +88,27 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
+  <widget class="QLineEdit" name="kernelSizeEdit">
    <property name="geometry">
     <rect>
-     <x>280</x>
+     <x>290</x>
      <y>50</y>
      <width>91</width>
      <height>20</height>
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_3">
+  <widget class="QLineEdit" name="stridesEdit">
    <property name="geometry">
     <rect>
-     <x>440</x>
+     <x>460</x>
      <y>50</y>
      <width>101</width>
      <height>20</height>
     </rect>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboBox">
+  <widget class="QComboBox" name="paddingComboBox">
    <property name="geometry">
     <rect>
      <x>100</x>
@@ -118,10 +118,10 @@
     </rect>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboBox_2">
+  <widget class="QComboBox" name="activationComboBox">
    <property name="geometry">
     <rect>
-     <x>290</x>
+     <x>310</x>
      <y>110</y>
      <width>91</width>
      <height>22</height>
@@ -134,7 +134,7 @@
     <string/>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="continueButton">
    <property name="geometry">
     <rect>
      <x>320</x>
@@ -147,7 +147,7 @@
     <string>确定</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="cancelButton">
    <property name="geometry">
     <rect>
      <x>180</x>

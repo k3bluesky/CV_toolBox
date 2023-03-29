@@ -13,22 +13,12 @@
   <property name="windowTitle">
    <string>Add Pooling</string>
   </property>
-  <widget class="QLineEdit" name="lineEdit_3">
+  <widget class="QLabel" name="stridesLabel">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>94</y>
-     <width>172</width>
-     <height>21</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>66</y>
-     <width>56</width>
+     <x>50</x>
+     <y>60</y>
+     <width>71</width>
      <height>16</height>
     </rect>
    </property>
@@ -36,35 +26,35 @@
     <string>strides</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_3">
+  <widget class="QLabel" name="paddingLabel">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>96</y>
-     <width>56</width>
+     <x>50</x>
+     <y>100</y>
+     <width>71</width>
      <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>strides</string>
+    <string>padding</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="poolSizeEdit">
    <property name="geometry">
     <rect>
      <x>120</x>
-     <y>30</y>
+     <y>20</y>
      <width>172</width>
      <height>21</height>
     </rect>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="poolSizeLabel">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>30</y>
-     <width>72</width>
+     <x>30</x>
+     <y>20</y>
+     <width>91</width>
      <height>16</height>
     </rect>
    </property>
@@ -72,17 +62,17 @@
     <string>pool size</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
+  <widget class="QLineEdit" name="stridesEdit">
    <property name="geometry">
     <rect>
      <x>120</x>
-     <y>62</y>
+     <y>60</y>
      <width>172</width>
      <height>21</height>
     </rect>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="continueButton">
    <property name="geometry">
     <rect>
      <x>190</x>
@@ -95,7 +85,7 @@
     <string>确定</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="cancelButton">
    <property name="geometry">
     <rect>
      <x>50</x>
@@ -106,6 +96,16 @@
    </property>
    <property name="text">
     <string>取消</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="paddingComboBox">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>100</y>
+     <width>171</width>
+     <height>23</height>
+    </rect>
    </property>
   </widget>
  </widget>

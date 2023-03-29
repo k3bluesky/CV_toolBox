@@ -14,7 +14,7 @@
    <string>design</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="back">
+   <widget class="QPushButton" name="backButton">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -79,17 +79,7 @@
      <string>Add Fully Connected</string>
     </property>
    </widget>
-   <widget class="QListView" name="listView">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>120</y>
-      <width>581</width>
-      <height>351</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="next_2">
+   <widget class="QPushButton" name="saveButton">
     <property name="geometry">
      <rect>
       <x>410</x>
@@ -102,7 +92,7 @@
      <string>save</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="next_3">
+   <widget class="QPushButton" name="loadButton">
     <property name="geometry">
      <rect>
       <x>260</x>
@@ -115,7 +105,7 @@
      <string>load</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="next_4">
+   <widget class="QPushButton" name="exportButton">
     <property name="geometry">
      <rect>
       <x>560</x>
@@ -128,6 +118,16 @@
      <string>export</string>
     </property>
    </widget>
+   <widget class="QListWidget" name="listWidget">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>80</y>
+      <width>571</width>
+      <height>391</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -135,7 +135,7 @@
      <x>0</x>
      <y>0</y>
      <width>863</width>
-     <height>23</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">
