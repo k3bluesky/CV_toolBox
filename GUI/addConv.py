@@ -67,7 +67,7 @@ class Ui_AddCon(object):
         self.paddingLabel.setText(_translate("AddCon", "padding "))
         self.continueButton.setText(_translate("AddCon", "确定"))
         self.cancelButton.setText(_translate("AddCon", "取消"))
-        paddingList = ["VALID","SAME"]
+        paddingList = ["SAME","VALID"]
         self.paddingComboBox.addItems(paddingList)
-        activationList = ["Sigmoid","ReLU","Tanh","softmax"]
+        activationList = ["sigmoid","relu","tanh","softmax"]
         self.activationComboBox.addItems(activationList)

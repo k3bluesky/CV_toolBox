@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>863</width>
-    <height>630</height>
+    <height>639</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -44,7 +44,7 @@
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>130</y>
+      <y>110</y>
       <width>171</width>
       <height>71</height>
      </rect>
@@ -57,7 +57,7 @@
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>240</y>
+      <y>200</y>
       <width>171</width>
       <height>71</height>
      </rect>
@@ -70,13 +70,13 @@
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>350</y>
+      <y>380</y>
       <width>171</width>
       <height>71</height>
      </rect>
     </property>
     <property name="text">
-     <string>Add Fully Connected</string>
+     <string>Add Dense</string>
     </property>
    </widget>
    <widget class="QPushButton" name="saveButton">
@@ -121,11 +121,130 @@
    <widget class="QListWidget" name="listWidget">
     <property name="geometry">
      <rect>
-      <x>250</x>
-      <y>80</y>
-      <width>571</width>
-      <height>391</height>
+      <x>240</x>
+      <y>90</y>
+      <width>591</width>
+      <height>381</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="inputShaplabel">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>40</y>
+      <width>151</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>input shape：</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="xlabel">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>40</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>x</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="xlineEdit">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>40</y>
+      <width>113</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="ylineEdit_2">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>40</y>
+      <width>113</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ylabel_3">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>40</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>y</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="zlineEdit_3">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>40</y>
+      <width>113</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="zlabel_4">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>40</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>z</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="flattenButton">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>290</y>
+      <width>171</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Add Flatten</string>
     </property>
    </widget>
   </widget>

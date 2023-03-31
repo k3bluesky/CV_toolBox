@@ -46,5 +46,5 @@ class Ui_addFC(object):
         self.activationLabel.setText(_translate("addFC", "activation"))
         self.continueButton.setText(_translate("addFC", "确定"))
         self.cancelButton.setText(_translate("addFC", "取消"))
-        activationList = ["NULL","Sigmoid","ReLU","Tanh","softmax"]
+        activationList = ["sigmoid","relu","tanh","softmax"]
         self.activationComboBox.addItems(activationList)

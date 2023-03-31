@@ -51,5 +51,5 @@ class Ui_AddPooling(object):
         self.poolSizeLabel.setText(_translate("AddPooling", "pool size"))
         self.continueButton.setText(_translate("AddPooling", "确定"))
         self.cancelButton.setText(_translate("AddPooling", "取消"))
-        paddingList = ["VALID", "SAME"]
+        paddingList = ["SAME", "VALID"]
         self.paddingComboBox.addItems(paddingList)
