@@ -14,7 +14,7 @@
    <string>test model</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="cameraScreen">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -26,8 +26,11 @@
     <property name="text">
      <string>摄像头画面</string>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="startButton">
     <property name="geometry">
      <rect>
       <x>790</x>
@@ -53,7 +56,7 @@
      <string>stop</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="resultLabel">
     <property name="geometry">
      <rect>
       <x>770</x>
@@ -66,13 +69,13 @@
      <string>result</string>
     </property>
    </widget>
-   <widget class="QTextBrowser" name="textBrowser">
+   <widget class="QTextEdit" name="resultEdit">
     <property name="geometry">
      <rect>
       <x>770</x>
       <y>340</y>
       <width>221</width>
-      <height>181</height>
+      <height>201</height>
      </rect>
     </property>
    </widget>
@@ -83,7 +86,7 @@
      <x>0</x>
      <y>0</y>
      <width>1019</width>
-     <height>23</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

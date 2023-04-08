@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+
 from PyQt5.QtWidgets import QMainWindow
 
 
@@ -18,24 +19,25 @@ class Ui_testModel(QMainWindow):
         testModel.resize(1019, 603)
         self.centralwidget = QtWidgets.QWidget(testModel)
         self.centralwidget.setObjectName("centralwidget")
-        self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(20, 40, 711, 451))
-        self.label.setObjectName("label")
-        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(790, 70, 161, 61))
-        self.pushButton.setObjectName("pushButton")
+        self.cameraScreen = QtWidgets.QLabel(self.centralwidget)
+        self.cameraScreen.setGeometry(QtCore.QRect(20, 40, 711, 451))
+        self.cameraScreen.setAlignment(QtCore.Qt.AlignCenter)
+        self.cameraScreen.setObjectName("cameraScreen")
+        self.startButton = QtWidgets.QPushButton(self.centralwidget)
+        self.startButton.setGeometry(QtCore.QRect(790, 70, 161, 61))
+        self.startButton.setObjectName("startButton")
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_2.setGeometry(QtCore.QRect(790, 150, 161, 61))
         self.pushButton_2.setObjectName("pushButton_2")
-        self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(770, 320, 54, 12))
-        self.label_2.setObjectName("label_2")
-        self.textBrowser = QtWidgets.QTextBrowser(self.centralwidget)
-        self.textBrowser.setGeometry(QtCore.QRect(770, 340, 221, 181))
-        self.textBrowser.setObjectName("textBrowser")
+        self.resultLabel = QtWidgets.QLabel(self.centralwidget)
+        self.resultLabel.setGeometry(QtCore.QRect(770, 320, 54, 12))
+        self.resultLabel.setObjectName("resultLabel")
+        self.resultEdit = QtWidgets.QTextEdit(self.centralwidget)
+        self.resultEdit.setGeometry(QtCore.QRect(770, 340, 221, 201))
+        self.resultEdit.setObjectName("resultEdit")
         testModel.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(testModel)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1019, 23))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1019, 22))
         self.menubar.setObjectName("menubar")
         testModel.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(testModel)
@@ -48,7 +50,7 @@ class Ui_testModel(QMainWindow):
     def retranslateUi(self, testModel):
         _translate = QtCore.QCoreApplication.translate
         testModel.setWindowTitle(_translate("testModel", "test model"))
-        self.label.setText(_translate("testModel", "摄像头画面"))
-        self.pushButton.setText(_translate("testModel", "start"))
+        self.cameraScreen.setText(_translate("testModel", "摄像头画面"))
+        self.startButton.setText(_translate("testModel", "start"))
         self.pushButton_2.setText(_translate("testModel", "stop"))
-        self.label_2.setText(_translate("testModel", "result"))
+        self.resultLabel.setText(_translate("testModel", "result"))

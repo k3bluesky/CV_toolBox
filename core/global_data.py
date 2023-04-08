@@ -9,3 +9,5 @@ designY=0
 designZ=0
 code = ""
 datalabel=[]
+ret=''
+img=''
