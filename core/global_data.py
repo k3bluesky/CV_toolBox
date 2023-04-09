@@ -11,3 +11,6 @@ code = ""
 datalabel=[]
 ret=''
 img=''
+img_name = ''
+img_num = ''
+savePath = ''

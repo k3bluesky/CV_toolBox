@@ -2,9 +2,9 @@
 import numpy as np
 from PyQt5.QtCore import pyqtSignal, QThread, QTimer
 from PyQt5.QtGui import QPixmap, QImage
-from PyQt5.QtWidgets import QMessageBox
-
-
+from PyQt5.QtWidgets import QMessageBox, QFileDialog
+from tensorflow.keras import models
+from tensorflow.keras.preprocessing import image
 from GUI.trainWin import Ui_trainWin
 from GUI.useModel import Ui_testModel
 import cv2
@@ -61,9 +61,43 @@ class useModelWindow(Ui_testModel,Ui_trainWin):
 
         self.startButton.clicked.connect(self.openC)
         self.startButton.clicked.connect(self.startCamera)
+        self.startButton.clicked.connect(self.getXYZ)
         self.timer_camera.timeout.connect(self.show_camera)  # 若定时器结束，则调用show_camera()
 
         self.pushButton_2.clicked.connect(self.closeCamera)
+
+        self.uploadButton.clicked.connect(self.choosePic)
+
+    def choosePic(self):
+        self.getXYZ()
+        dir = QFileDialog()
+        dir.setNameFilter('图片文件(*.jpg *.png *.bmp *.gif)')
+        dir.setFileMode(QFileDialog.ExistingFile)
+
+        dir.setDirectory('..\\')
+
+        if dir.exec_():
+            self.picEdit.setText(dir.selectedFiles()[0])
+        picPath = self.picEdit.text()
+        self.cameraScreen.setPixmap(QPixmap(picPath))
+        img = image.load_img(picPath,color_mode = "rgb" ,target_size=(int(gl.designX), int(gl.designY)))
+        x = image.img_to_array(img).reshape(1, int(gl.designX), int(gl.designY),
+                                          int(gl.designZ))  # 将图片转为数组形式,转为4维数组[样本数,边像素，边像素，通道数]
+        # x = 255.0 - x.astype('float32')#图片翻转颜色
+        model = models.load_model("./model.h5")
+        pre = model.predict(x)  # 应用模型
+        y = np.argmax(pre)
+        y = np.argmax(pre)
+        self.resultEdit.setText(str(y))
+
+
+    def getXYZ(self):
+        if gl.designX == 0:
+            gl.designX = self.xlineEdit.text()
+        if gl.designY == 0:
+            gl.designY = self.ylineEdit_2.text()
+        if gl.designZ == 0:
+            gl.designZ = self.zlineEdit_3.text()
 
     def closeCamera(self):
             self.openCamera = False
@@ -89,8 +123,7 @@ class useModelWindow(Ui_testModel,Ui_trainWin):
             self.label.setText("摄像头在开启的过程中会比较慢，请稍等，别乱点，以免卡死。")
 
     def show_camera(self):
-        from tensorflow.keras import models
-        from tensorflow.keras.preprocessing import image
+
         model = models.load_model("./model.h5")
         flag, self.image = self.cap.read()  # 从视频流中读取
         #
@@ -110,10 +143,10 @@ class useModelWindow(Ui_testModel,Ui_trainWin):
         x = cv2.resize(self.image,(int(gl.designX), int(gl.designY)))
         x = image.img_to_array(x).reshape(1, int(gl.designX), int(gl.designY), int(gl.designZ))  # 将图片转为数组形式,转为4维数组[样本数,边像素，边像素，通道数]
         # x = 255.0 - x.astype('float32')#图片翻转颜色
-        y = model.predict(x)  # 应用模型
-        y = np.argmax(y)
+        pre = model.predict(x)  # 应用模型
+        y = np.argmax(pre)
 
 
-
+        print(pre)
         self.resultEdit.setText(str(y))
         self.cameraScreen.setPixmap(QPixmap.fromImage(showImage))  # 往显示视频的Label里 显示QImage

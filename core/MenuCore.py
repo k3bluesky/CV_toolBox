@@ -17,11 +17,18 @@ class MainWindow(QMainWindow,Ui_menu):
         self.designModel.clicked.connect(self.close)
 
         self.classicalModel.clicked.connect(self.openClassic)
-        self.designModel.clicked.connect(self.close)
+        self.classicalModel.clicked.connect(self.close)
 
-        self.importModel.clicked.connect(self.openClassic)
-        self.designModel.clicked.connect(self.close)
+        self.importModel.clicked.connect(self.openUD)
+        self.importModel.clicked.connect(self.close)
 
+        self.toolboxModel.clicked.connect(self.openTB)
+        self.toolboxModel.clicked.connect(self.close)
+
+    def openTB(self):
+        import core.datasetToolCore
+        self.design = core.datasetToolCore.datasetToolWindow()
+        self.design.show()
 
     def openDesign(self):
         import core.DesignCore

@@ -14,7 +14,7 @@
    <string>train</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="trainButton">
     <property name="geometry">
      <rect>
       <x>480</x>
@@ -27,21 +27,11 @@
      <string>train</string>
     </property>
    </widget>
-   <widget class="QTextBrowser" name="textBrowser">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>180</y>
-      <width>731</width>
-      <height>361</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>60</y>
+      <x>30</x>
+      <y>40</y>
       <width>71</width>
       <height>21</height>
      </rect>
@@ -53,8 +43,8 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>60</y>
+      <x>230</x>
+      <y>40</y>
       <width>101</width>
       <height>21</height>
      </rect>
@@ -66,8 +56,8 @@
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>100</y>
+      <x>250</x>
+      <y>120</y>
       <width>71</width>
       <height>21</height>
      </rect>
@@ -76,50 +66,56 @@
      <string>dataset</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit">
+   <widget class="QLineEdit" name="epochLineEdit">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>60</y>
+      <x>90</x>
+      <y>40</y>
       <width>131</width>
       <height>20</height>
      </rect>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_2">
+   <widget class="QLineEdit" name="batchLineEdit">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>60</y>
+      <x>320</x>
+      <y>40</y>
       <width>113</width>
       <height>20</height>
      </rect>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_3">
+   <widget class="QLineEdit" name="datasetLineEdit">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>100</y>
+      <x>320</x>
+      <y>120</y>
       <width>113</width>
       <height>20</height>
      </rect>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="openPathButton">
     <property name="geometry">
      <rect>
-      <x>420</x>
-      <y>100</y>
+      <x>430</x>
+      <y>120</y>
       <width>21</width>
       <height>23</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Adobe Devanagari</family>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>...</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="useModel">
     <property name="geometry">
      <rect>
       <x>640</x>
@@ -135,36 +131,121 @@
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>100</y>
+      <x>30</x>
+      <y>120</y>
       <width>71</width>
       <height>21</height>
      </rect>
     </property>
     <property name="text">
-     <string>model</string>
+     <string>js_model</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_4">
+   <widget class="QPushButton" name="openJsonPathButton">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>100</y>
+      <x>220</x>
+      <y>120</y>
       <width>21</width>
       <height>23</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Adobe Devanagari</family>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>...</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_4">
+   <widget class="QLineEdit" name="jsModelLineEdit">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>100</y>
+      <x>110</x>
+      <y>120</y>
       <width>113</width>
       <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>80</y>
+      <width>16</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>x</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="yLineEdit">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>80</y>
+      <width>91</width>
+      <height>24</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>80</y>
+      <width>16</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>z</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="xLineEdit">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>80</y>
+      <width>91</width>
+      <height>24</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>80</y>
+      <width>16</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>y</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="zLineEdit">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>80</y>
+      <width>101</width>
+      <height>24</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="trainScreen">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>160</y>
+      <width>771</width>
+      <height>391</height>
      </rect>
     </property>
    </widget>
@@ -175,7 +256,7 @@
      <x>0</x>
      <y>0</y>
      <width>823</width>
-     <height>23</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

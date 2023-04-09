@@ -1,11 +1,11 @@
 import os
+import shutil
 import sys
 
-from PyQt5.QtCore import QThread, pyqtSignal, QObject, QEventLoop, QTimer
+from PyQt5.QtCore import QThread, pyqtSignal, QObject
 from PyQt5.QtGui import QTextCursor
 from PyQt5.QtWidgets import QFileDialog
 
-from GUI.Menu import Ui_menu
 from GUI.design import Ui_design
 from GUI.trainWin import Ui_trainWin
 import core.global_data as gl
@@ -42,6 +42,22 @@ class trainWindow(Ui_trainWin,Ui_design):
         self.useModel.clicked.connect(self.openUseModel)
         self.trainButton.clicked.connect(self.trainModel)
         self.openPathButton.clicked.connect(self.choiseDatasetPath)
+        self.exportButton.clicked.connect(self.exportCode)
+
+    def exportCode(self):
+        self.readyCode()
+
+        dir = QFileDialog()
+        dir.setNameFilter('python文件(*.py)')
+        dir.setAcceptMode(QFileDialog.AcceptSave)
+        dir.setFileMode(QFileDialog.AnyFile)
+
+        dir.setDirectory('..\\')
+
+        if dir.exec_():
+            path = dir.selectedFiles()[0]
+
+        shutil.copy('./core/temp/temp.py', path)
 
     def normalOutputWritten1(self, text):
         """Append text to the QTextEdit."""
@@ -53,10 +69,9 @@ class trainWindow(Ui_trainWin,Ui_design):
         self.trainScreen.ensureCursorVisible()
 
     def choiseDatasetPath(self):
-        nowPath = os.path.split(os.path.realpath(__file__))[0]
         dir = QFileDialog()
         dir.setFileMode(QFileDialog.DirectoryOnly)
-        dir.setDirectory(nowPath)
+        dir.setDirectory('..\\')
 
         if dir.exec_():
             self.datasetLineEdit.setText(dir.selectedFiles()[0])
